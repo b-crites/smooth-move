@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'CollegeBlock';
+  src: url('/fonts/College_Block.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.college-block {
+  font-family: 'CollegeBlock', sans-serif;
+}
