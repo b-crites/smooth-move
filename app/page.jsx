@@ -24,7 +24,7 @@ export default function Home() {
       <div className="absolute college-block top-0 left-0 w-full h-full z-20" style={{ marginTop: "80px", height: "calc(100vh - 80px)" }}>
         {/* Text centered in the middle */}
         <div className="flex justify-center items-center h-full">
-          <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{ duration: 0.6 }} viewport={{ once: true }}  className="text-center space-y-8 lg:space-y-16 flex flex-col items-center">
+          <motion.div initial={{y:20, opacity:0}} animate={{y:0, opacity:1}} transition={{ duration: 0.6 }} viewport={{ once: true }}  className="text-center space-y-8 lg:space-y-16 flex flex-col items-center">
             <h1 className="text-6xl lg:text-8xl text-white">Poured to perfection</h1>
             <h1 className="text-6xl  lg:text-8xl text-white">Built to last</h1>
         </motion.div>
@@ -84,8 +84,8 @@ export default function Home() {
   </div>
 
   {/* Grid Section */}
-  <div className="relative z-20 lg:h-[500px] grid grid-cols-1 lg:grid-cols-2 mt-10 overflow-visible ">
-    <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}} className="grid space-y-2 lg:space-x-3 lg:mx-5 pb-5 mx-auto lg:ms-5 grid-cols-1 lg:grid-cols-2 col-span-1 lg:order-1 order-2">
+  <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}}  className="relative z-20 lg:h-[500px] grid grid-cols-1 lg:grid-cols-2 mt-10 overflow-visible ">
+    <div className="grid space-y-2 lg:space-x-3 lg:mx-5 pb-5 mx-auto lg:ms-5 grid-cols-1 lg:grid-cols-2 col-span-1 lg:order-1 order-2">
       <div className="col-span-1 relative z-30">
         <Image 
           src="/Img/Crew_Img_1.png" 
@@ -104,7 +104,7 @@ export default function Home() {
           className="relative z-30 lg:translate-y-[70%]"
         />
       </div>
-    </motion.div>
+    </div>
     <div className="col-span-1 flex flex-col justify-center order-1 lg:order-2 items-center pb-10">
       <div className="">
         <p className="text-white text-lg mt-2 mx-auto w-11/12 text-center lg:w-8/12">
@@ -113,7 +113,7 @@ export default function Home() {
         
       </div>
       </div>
-  </div>
+  </motion.div>
   <div className="w-full z-10 flex justify-center">
       <Button text="VIEW Our History" />
       </div>
@@ -130,7 +130,7 @@ export default function Home() {
           Let's get started talking about your project
         </p>
         <div className="mt-6">
-        <Button text="CALL NOW" />
+        <Button aria-label="Call Now" text="CALL NOW" />
         </div>
       </div>
     </div>

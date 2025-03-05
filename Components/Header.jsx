@@ -8,7 +8,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="absolute top-0 left-0 w-full z-50">
+    <div className="absolute top-0 left-0 w-full z-50 shadow-xl">
       <div className="college-block">
         {/* Top Blue Bar */}
         <div className="flex justify-between bg-[#003f71] p-2 items-center lg:pr-5">
@@ -20,12 +20,14 @@ export default function Header() {
         {/* Header Content */}
         <div className="flex justify-between bg-white items-center px-8 lg:px-16 relative">
           {/* Logo */}
+          <Link href={"/"}>
           <Image
             src="/Img/Smooth_Move_Logo.png"
             alt="Smooth Move Concrete Pumping"
             width={150}
             height={150}
           />
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex justify-between items-center space-x-6">
@@ -43,7 +45,7 @@ export default function Header() {
                 </Link>
               </div>
             </li>
-            <Link href="#"><li className="text-black text-xl">HISTORY</li></Link>
+            <Link href="/history"><li className="text-black text-xl">HISTORY</li></Link>
             <Link href="#"><li className="text-black text-xl">CONTACT</li></Link>
           </ul>
 
