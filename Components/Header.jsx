@@ -32,7 +32,9 @@ export default function Header() {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex justify-between items-center space-x-6">
             <li className="relative group">
-              <a className="focus:outline-none text-xl">EQUIPMENT</a>
+              <Link href="/equipment">
+              <button className="focus:outline-none text-xl">EQUIPMENT</button>
+              </Link>
               <div className="absolute left-1/2 -translate-x-1/2 z-50 w-48 bg-white border border-black text-black rounded-md shadow-lg overflow-hidden transition-all duration-300 max-h-0 opacity-0 transform scale-y-75 group-hover:max-h-96 group-hover:opacity-100 group-hover:scale-y-100">
                 <Link href="/bands">
                   <button className="block px-4 py-2 text-sm hover:text-white hover:bg-gray-700 w-full text-left">1</button>
@@ -46,6 +48,7 @@ export default function Header() {
               </div>
             </li>
             <Link href="/history"><li className="text-black text-xl">HISTORY</li></Link>
+            <Link href="/gallery"><li className="text-black text-xl">GALLERY</li></Link>
             <Link href="#"><li className="text-black text-xl">CONTACT</li></Link>
           </ul>
 

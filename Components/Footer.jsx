@@ -15,7 +15,7 @@ export default function Footer() {
         />
         
         {/* Navigation Links */}
-        <nav className="flex space-x-6 mt-4 text-md italic">
+        <nav className="flex space-x-6 mt-4 text-lg italic">
           <Link href="/equipment" className="hover:underline">Equipment</Link>
           <span>|</span>
           <Link href="/history" className="hover:underline">History</Link>

@@ -143,7 +143,7 @@ export default function History() {
         <div className="text-center w-11/12 mx-auto mt-8">
           {" "}
           {/* Added margin for spacing */}
-          <h1 className="text-black text-3xl college-block">Our Beginnings</h1>
+          <h1 className="text-black text-3xl college-block">Team Excellence</h1>
           <p className="lg:w-1/2 mx-auto mt-4 text-lg">
             At Smooth Move Concrete Pumping, safety is always our top priority.
             We understand that the success of every job depends on the
