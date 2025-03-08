@@ -6,6 +6,7 @@ import Button from "@/Components/Button";
 import VideoBackground from "@/Components/VideoBg";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { equipment } from "./data/equipment";
 
 export default function Home() {
 
@@ -14,7 +15,7 @@ export default function Home() {
     { name: "S 36 X", image: "/Img/s36x_2.png" },
     { name: "S 36 X", image: "/Img/s36x_2.png" },
   ];
-
+  //   const equipmentItem = equipment.find((item) => item.id === id);
 
   return (
     <>
@@ -43,16 +44,19 @@ export default function Home() {
         </div>
         {/*CARDS  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  mx-auto place-items-center lg:flex lg:flex-wrap lg:justify-center">
-  {trucks.map((truck, index) => (
-    <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}} key={index} className="bg-white h-[356px] w-[384px] border border-black">
+  {equipment.map((equipment) => (
+    <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}} key={equipment.id} className="bg-white h-[400px] w-[384px] border border-black">
       <div className="flex justify-center pt-1">
-        <Image src={truck.image} alt="Smooth Move Concrete Pumping" width={380} height={380} />
+        <Image className="h-60" src={equipment.image} alt="Smooth Move Concrete Pumping" width={380} height={380} />
       </div>
       <div className="flex justify-center pt-5">
-        <h1 className="text-black text-2xl">{truck.name}</h1>
+        <h1 className="text-black text-2xl">{equipment.name}</h1>
       </div>
-      <div className="flex justify-center pt-5">
+        <p className="text-black text-sm text-center">{equipment.features.bestFor}</p>
+      <div className="flex justify-center py-5">
+        <Link href={`/equipment/${equipment.id}`}>
         <Button text="VIEW Truck" />
+        </Link>
       </div>
     </motion.div>
   ))}
