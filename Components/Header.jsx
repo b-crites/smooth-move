@@ -49,7 +49,7 @@ export default function Header() {
             </li>
             <Link href="/history"><li className="text-black text-xl">HISTORY</li></Link>
             <Link href="/gallery"><li className="text-black text-xl">GALLERY</li></Link>
-            <Link href="#"><li className="text-black text-xl">CONTACT</li></Link>
+            <Link href="/contact"><li className="text-black text-xl">CONTACT</li></Link>
           </ul>
 
           {/* Hamburger Menu Button */}

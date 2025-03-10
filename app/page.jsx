@@ -95,7 +95,7 @@ export default function Home() {
           className="relative z-30 lg:translate-y-[-10%]"
         />
       </div>
-      <div className="col-span-1 relative z-30 lg:min-h-[420px]">
+      <div className="hidden lg:block col-span-1 relative z-30 lg:min-h-[420px]">
         <Image 
           src="/Img/Crew_Img_2.png" 
           alt="Smooth Move Concrete Pumping" 
