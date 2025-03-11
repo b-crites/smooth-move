@@ -8,9 +8,10 @@ export default function Contact() {
                 {/* Background Image with Dark Overlay */}
                 <div className="h-screen relative">
                     <Image 
-                        src="/img/Contact_BG.JPG" 
+                        src="/Img/Contact_BG.JPG" 
                         width={1700} 
                         height={1000} 
+                        loading="lazy"
                         alt="Smooth Move Concrete Pumping" 
                         className="w-full h-full object-cover object-bottom"
                     />

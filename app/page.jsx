@@ -73,9 +73,10 @@ export default function Home() {
     <Image 
       src="/Img/About_Bg.png" 
       alt="Smooth Move Concrete Pumping" 
-      layout="fill" 
-      objectFit="cover" 
-      className="-z-10"
+      loading="lazy" 
+      width={1800}
+      height={1000}
+      className="-z-10 w-full h-full"
     />
     {/* Dark Overlay */}
     <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -96,6 +97,7 @@ export default function Home() {
           alt="Smooth Move Concrete Pumping" 
           width={420} 
           height={420} 
+          loading="lazy"
           className="relative z-30 lg:translate-y-[-10%]"
         />
       </div>
@@ -105,6 +107,7 @@ export default function Home() {
           alt="Smooth Move Concrete Pumping" 
           width={420} 
           height={420} 
+          loading="lazy"
           className="relative z-30 lg:translate-y-[70%]"
         />
       </div>
@@ -146,6 +149,7 @@ export default function Home() {
         alt="Smooth Move Concrete Pumping"
         width={500}
         height={500}
+        loading="lazy"
         className="max-w-full h-auto"
       />
     </div>
@@ -160,9 +164,10 @@ export default function Home() {
         <Image 
           src= "/Img/Sponsor_Bg.png"
           alt="Background" 
-          layout="fill" 
-          objectFit="cover" 
-          className="-z-10"
+          width={1800}
+          height={1000}
+          loading="lazy"
+          className="-z-10 w-full h-full object-cover"
         />
         {/* White Overlay */}
         <div className="absolute inset-0 bg-white opacity-70"></div>
@@ -185,6 +190,7 @@ export default function Home() {
         alt="American Hero Adventures Logo" 
         width={200} 
         height={200} 
+        loading="lazy"
       />
     </Link>
             </div>
