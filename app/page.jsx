@@ -10,13 +10,7 @@ import { equipment } from "./data/equipment";
 
 export default function Home() {
 
-  const trucks = [
-    { name: "S 36 X", image: "/Img/s36x_2.png" },
-    { name: "S 36 X", image: "/Img/s36x_2.png" },
-    { name: "S 36 X", image: "/Img/s36x_2.png" },
-  ];
-  //   const equipmentItem = equipment.find((item) => item.id === id);
-
+  
   return (
     <>
      <VideoBackground />
@@ -33,7 +27,9 @@ export default function Home() {
         
         {/* Button positioned at the bottom */}
         <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{ duration: 0.8 }} viewport={{ once: true }} className="absolute bottom-16 left-0 w-full flex justify-center">
+          <Link href="/gallery">
           <Button text="View Our Work" />
+          </Link>
         </motion.div>
       </div>
       {/* FEATURED TRUCKS _________________________________________________________________________________________________________________________________ */}
@@ -44,25 +40,27 @@ export default function Home() {
         </div>
         {/*CARDS  */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  mx-auto place-items-center lg:flex lg:flex-wrap lg:justify-center">
-  {equipment.map((equipment) => (
-    <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}} key={equipment.id} className="bg-white h-[400px] w-[384px] border border-black">
-      <div className="flex justify-center pt-1">
-        <Image className="h-60" src={equipment.image} alt="Smooth Move Concrete Pumping" width={380} height={380} />
+  {equipment.slice(0,3).map((equipment) => (
+    <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}} key={equipment.id} className="bg-white h-[400px] relative w-11/12 max-w-[384px] border border-black">
+      <div className="flex justify-center pt-1 h-60">
+        <Image className="h-60 border border-black shadow mx-1 " src={equipment.image} alt="Smooth Move Concrete Pumping" width={380} height={380} />
       </div>
       <div className="flex justify-center pt-5">
         <h1 className="text-black text-2xl">{equipment.name}</h1>
       </div>
-        <p className="text-black text-sm text-center">{equipment.features.bestFor}</p>
-      <div className="flex justify-center py-5">
+        <p className="text-black text-sm justify-center align-middle flex text-center">{equipment.features.bestFor}</p>
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex justify-center mt-5">
         <Link href={`/equipment/${equipment.id}`}>
-        <Button text="VIEW Truck" />
+        <Button  text="VIEW Truck" color="bg-black" textColor="text-white" borderColor="border-white" hoverColor="hover:bg-white" hoverTextColor="hover:text-black" hoverBorderColor="hover:border-black" />
         </Link>
       </div>
     </motion.div>
   ))}
 </div>
       <div className="w-full flex justify-center pt-10">
-      <Button text="VIEW ALL TRUCKS" />
+        <Link href="/equipment">
+      <Button text="VIEW ALL TRUCKS"  color="bg-black" textColor="text-white" borderColor="border-white" hoverColor="hover:bg-white" hoverTextColor="hover:text-black" hoverBorderColor="hover:border-black" />
+      </Link>
       </div>
       </div>
 
@@ -76,7 +74,7 @@ export default function Home() {
       loading="lazy" 
       width={1800}
       height={1000}
-      className="-z-10 w-full h-full"
+      className="-z-10 w-full object-cover h-full"
     />
     {/* Dark Overlay */}
     <div className="absolute inset-0 bg-black opacity-60"></div>
@@ -122,7 +120,9 @@ export default function Home() {
       </div>
   </motion.div>
   <div className="w-full z-10 flex justify-center">
+        <Link href="/history">
       <Button text="VIEW Our History" />
+      </Link>
       </div>
 </div>
 
@@ -130,20 +130,20 @@ export default function Home() {
 <div className="bg-white w-full py-10">
   <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}} className="grid grid-cols-1 lg:grid-cols-2 gap-10 mx-auto place-items-center">
     {/* Red Box */}
-    <div className="flex justify-center lg:ms-auto me-6">
+    <div className="flex justify-center lg:ms-auto lg:me-6">
       <div className="bg-[#EC3C33] rounded-2xl border-4 border-[#003F71] w-11/12 max-w-xl h-auto py-8 px-6 text-center">
         <h1 className="text-white text-4xl college-block">Give Us A Call</h1>
         <p className="text-white text-2xl lg:text-3xl mt-5">
           Let's get started talking about your project
         </p>
         <div className="mt-6">
-        <Button aria-label="Call Now" text="CALL NOW" />
+        <Button text="CALL NOW" color="bg-white" textColor="text-black" borderColor="border-black" hoverColor="hover:bg-[#003f71]" hoverTextColor="hover:text-white" hoverBorderColor="hover:border-white" />
         </div>
       </div>
     </div>
 
     {/* Image */}
-    <div className="flex justify-center lg:me-auto ms-6">
+    <div className="flex justify-center lg:me-auto lg:ms-6">
       <Image
         src="/Img/Smooth_Move_Logo_2.png"
         alt="Smooth Move Concrete Pumping"

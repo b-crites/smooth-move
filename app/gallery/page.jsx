@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Gallery = () => {
   const images = [
-    "/Img/American_Flag.jpg",
     "/Img/Contact_BG.JPG",
+    "/Img/American_Flag.jpg",
     "/Img/Good_Vibes_New_Shop.png",
     "/Img/Truck_Working_Img.jpg",
   ];
@@ -62,8 +62,8 @@ const Gallery = () => {
               loading="lazy"
               alt={`Gallery image ${index + 1}`}
               className="w-full h-full object-cover"
-               blurDataURL="data:image/png;base64,..."
-               placeholder="blur"
+              blurDataURL="data:image/png;base64,..."
+              placeholder="blur"
             />
           </div>
         ))}
