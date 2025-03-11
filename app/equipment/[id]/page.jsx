@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { equipment } from "@/app/data/equipment";
 import { notFound } from "next/navigation";
-import Button from "@/Components/Button";
+import MoreTrucks from "@/Components/MoreTrucks";
 
 export default function EquipmentDetailPage() {
   const params = useParams();
@@ -32,11 +32,13 @@ export default function EquipmentDetailPage() {
     { title: "Performance", key: "performance" },
     { title: "Applications", key: "applications" },
     { title: "Safety Features", key: "safety" },
+    { title: "Features", key: "features" },
   ];
 
   return (
-    <div className="max-w-5xl mx-auto p-4 pt-56">
+    <div className="mx-auto p-4 pt-56">
       {/* Hero Section */}
+      <div className="max-w-5xl mx-auto">
       <div className="text-center pb-5">
         <div className="p-2 inline-block">
           <Image src={equipmentItem.image} alt={equipmentItem.name} width={800} height={400} />
@@ -95,23 +97,12 @@ export default function EquipmentDetailPage() {
     </div>
   ))}
 </div>
+      </div>
 
 
       {/* More Trucks */}
-      <div className="mt-10">
-        <h3 className="text-2xl text-center college-block">MORE TRUCKS</h3>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
-          {["S 38 SX", "S 39 SX", "S 42 X"].map((truck, index) => (
-            <div key={index} className="border p-2 text-center">
-              <Image src={`/truck${index + 1}.jpg`} alt={truck} width={250} height={150} />
-              <p className="mt-2 text-xl font-semibold">{truck}</p>
-              <div className="py-3">
-              <Button text="View Truck" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+     <MoreTrucks currentId={id} />
+</div>
+      
   );
 }

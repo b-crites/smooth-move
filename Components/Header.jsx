@@ -2,10 +2,29 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence, delay } from "framer-motion";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { IoIosArrowForward } from "react-icons/io"; // Import arrow icon
+import { equipment } from "@/app/data/equipment";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },// Stagger each item
+      
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { x: -20, opacity: 0 },
+    visible: { x: 0, opacity: 1 }
+  };
+
+  const [equipmentOpen, setEquipmentOpen] = useState(false);
 
   return (
     <div className="absolute top-0 left-0 w-full z-50 shadow-xl">
@@ -36,16 +55,16 @@ export default function Header() {
               <button className="focus:outline-none text-xl">EQUIPMENT</button>
               </Link>
               <div className="absolute left-1/2 -translate-x-1/2 z-50 w-48 bg-white border border-black text-black rounded-md shadow-lg overflow-hidden transition-all duration-300 max-h-0 opacity-0 transform scale-y-75 group-hover:max-h-96 group-hover:opacity-100 group-hover:scale-y-100">
-                <Link href="/bands">
-                  <button className="block px-4 py-2 text-sm hover:text-white hover:bg-gray-700 w-full text-left">1</button>
-                </Link>
-                <Link href="/events">
-                  <button className="block px-4 py-2 text-sm hover:text-white hover:bg-gray-700 w-full text-left">2</button>
-                </Link>
-                <Link href="/#food-trucks">
-                  <button className="block px-4 py-2 text-sm hover:text-white hover:bg-gray-700 w-full text-left">3</button>
-                </Link>
-              </div>
+  {equipment.map((item) => (
+    <Link key={item.id} href={`/equipment/${item.id}`}>
+      <button className="flex items-center px-4 py-2 text-lg hover:text-white hover:bg-gray-700 w-full text-left">
+        <Image src={item.image} alt={item.name} width={80} height={80} className="mr-2" />
+        <span className="flex-1 text-right">{item.name}</span>
+      </button>
+    </Link>
+  ))}
+</div>
+
             </li>
             <Link href="/history"><li className="text-black text-xl">HISTORY</li></Link>
             <Link href="/gallery"><li className="text-black text-xl">GALLERY</li></Link>
@@ -74,17 +93,63 @@ export default function Header() {
         >
           <XIcon className="w-8 h-8" />
         </button>
-        <ul className="space-y-6 text-center">
-          <li className="text-white text-3xl">
-            <Link href="#" onClick={() => setMenuOpen(false)}>EQUIPMENT</Link>
-          </li>
-          <li className="text-white text-3xl">
-            <Link href="#" onClick={() => setMenuOpen(false)}>HISTORY</Link>
-          </li>
-          <li className="text-white text-3xl">
-            <Link href="#" onClick={() => setMenuOpen(false)}>CONTACT</Link>
-          </li>
-        </ul>
+        
+    <AnimatePresence>
+      {menuOpen && (
+        <motion.ul 
+          initial="hidden" 
+          animate="visible" 
+          exit="exit"
+          variants={menuVariants} 
+          className="space-y-4 text-center"
+        >
+          {/* Equipment Dropdown */}
+          <motion.li variants={itemVariants} className="text-white text-3xl flex flex-col items-center">
+            <button 
+              onClick={() => setEquipmentOpen(!equipmentOpen)} 
+              className="flex items-center gap-2 focus:outline-none"
+            >
+              EQUIPMENT
+              <motion.span 
+                animate={{ rotate: equipmentOpen ? 90 : 0 }} 
+                transition={{ duration: 0.2 }}
+              >
+                <IoIosArrowForward size={24} />
+              </motion.span>
+            </button>
+            <AnimatePresence>
+              {equipmentOpen && (
+                <motion.ul 
+                  initial={{ opacity: 0, height: 0 }} 
+                  animate={{ opacity: 1, height: "auto" }} 
+                  exit={{ opacity: 0, height: 0 }} 
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="mt-2 space-y-2 overflow-hidden"
+                > 
+                {equipment.map((item) => (
+                  <li key={item.id}>
+                    <Link href={`/equipment/${item.id}`} onClick={() => setMenuOpen(false)}>{item.name}</Link>
+                  </li>
+                ))}
+                 
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </motion.li>
+
+          {/* Other Menu Items */}
+          <motion.li variants={itemVariants} className="text-white text-3xl">
+            <Link href="/history" onClick={() => setMenuOpen(false)}>HISTORY</Link>
+          </motion.li>
+          <motion.li variants={itemVariants} className="text-white text-3xl">
+            <Link href="/gallery" onClick={() => setMenuOpen(false)}>GALLERY</Link>
+          </motion.li>
+          <motion.li variants={itemVariants} className="text-white text-3xl">
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>CONTACT</Link>
+          </motion.li>
+        </motion.ul>
+      )}
+    </AnimatePresence>
       </div>
     </div>
   );

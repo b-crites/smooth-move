@@ -36,11 +36,11 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="mt-4 text-sm">
-          Copyright © 2024 Smooth Move Concrete Pumping
+        <p className="mt-4 text-sm text-center">
+          Copyright © {new Date().getFullYear()} Smooth Move Concrete Pumping. All rights reserved.
         </p>
         <p className="text-sm">
-          Powered by <span className="font-bold text-[#008070]">Visionary Advance</span>
+          Powered by  <Link href="https://www.visionaryadvance.com" target="_blank"><span className="font-bold text-[#008070]">Visionary Advance</span></Link>
         </p>
       </div>
     </footer>
