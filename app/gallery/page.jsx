@@ -1,15 +1,14 @@
 'use client'
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const Gallery = () => {
   const images = [
-    "https://via.placeholder.com/600",
-    "https://via.placeholder.com/600",
-    "https://via.placeholder.com/600",
-    "https://via.placeholder.com/600",
-    "https://via.placeholder.com/600",
-    "https://via.placeholder.com/600",
+    "/Img/American_Flag.jpg",
+    "/Img/Contact_BG.JPG",
+    "/Img/Good_Vibes_New_Shop.png",
+    "/Img/Truck_Working_Img.jpg",
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -56,10 +55,15 @@ const Gallery = () => {
             className="relative aspect-square bg-gray-200 rounded-lg overflow-hidden cursor-pointer"
             onClick={() => openSlideshow(index)}
           >
-            <img
+            <Image
               src={src}
+              width={600}
+              height={600}
+              loading="lazy"
               alt={`Gallery image ${index + 1}`}
               className="w-full h-full object-cover"
+               blurDataURL="data:image/png;base64,..."
+               placeholder="blur"
             />
           </div>
         ))}
