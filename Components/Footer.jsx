@@ -7,12 +7,14 @@ export default function Footer() {
     <footer className="bg-[#003F71] text-white py-5 px-5">
       <div className="flex flex-col items-center">
         {/* Logo */}
+        <Link href="/">
         <Image 
           src="/Img/Smooth_Move_Logo_White.png" 
           alt="Smooth Move Concrete Pumping" 
           width={150} 
           height={100} 
         />
+        </Link>
         
         {/* Navigation Links */}
         <nav className="flex space-x-6 mt-4 text-lg italic">
@@ -26,10 +28,10 @@ export default function Footer() {
         {/* Social Icons */}
         <div className="flex items-center mt-4 w-full max-w-xs justify-between">
           <div className="flex-1 border-t border-white"></div>
-          <Link href="https://instagram.com" target="_blank" className="mx-2">
+          <Link href="https://www.instagram.com/smoothmoveconcrete/" target="_blank" className="mx-2">
             <FaInstagram className="text-2xl" />
           </Link>
-          <Link href="https://facebook.com" target="_blank" className="mx-2">
+          <Link href="https://www.facebook.com/SmoothMoveConcretePumping/" target="_blank" className="mx-2">
             <FaFacebookF className="text-2xl" />
           </Link>
           <div className="flex-1 border-t border-white"></div>

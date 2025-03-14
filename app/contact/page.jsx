@@ -1,5 +1,6 @@
 import Button from "@/Components/Button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Contact() {
     return (
@@ -33,7 +34,9 @@ export default function Contact() {
                         
                         </ul>
                         <div className="w-full mx-auto lg:place-items-start place-items-center">
+                            <Link href="tel:541-868-7019">
                         <Button text="CALL NOW" />
+                        </Link>
                         </div>
                 </div>
             </div>
