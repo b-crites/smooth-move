@@ -15,7 +15,7 @@ export default function Equipment() {
       <div className="flex justify-center pt-5">
         <h1 className="text-black text-2xl">{equipment.name}</h1>
       </div>
-        <p className="text-black text-sm justify-center mx-2 align-middle flex text-center">{equipment.features.bestFor}</p>
+        <p className="text-black text-sm justify-center mx-2 align-middle flex text-center">{Object.values(equipment.features)[0]}</p>
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex justify-center mt-5">
         <Link href={`/equipment/${equipment.id}`}>
         <Button text="VIEW Truck" />
