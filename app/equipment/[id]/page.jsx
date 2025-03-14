@@ -1,108 +1,51 @@
-"use client";
-
-import { useParams } from "next/navigation";
-import { useState } from "react";
-import Image from "next/image";
-import { equipment } from "@/app/data/equipment";
 import { notFound } from "next/navigation";
-import MoreTrucks from "@/Components/MoreTrucks";
+import { equipment } from "@/app/data/equipment";
+import EquipmentDetail from "@/Components/EquipmentDetail";
 
-export default function EquipmentDetailPage() {
-  const params = useParams();
-  const { id } = params;
+export async function generateStaticParams() {
+  return equipment.map((item) => ({ id: item.id.toString() }));
+}
 
-  const [openIndex, setOpenIndex] = useState(null);
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  // Find the equipment with the matching ID
-  const equipmentItem = equipment.find((item) => item.id === id);
-
-  // If no equipment is found with the given ID, show 404
+export async function generateMetadata({ params }) {
+  // Await params if needed
+  const resolvedParams = await params;
+  const id = resolvedParams?.id;
+  
+  const equipmentItem = equipment.find((item) => item.id.toString() === id);
+  
   if (!equipmentItem) {
-    notFound();
+    return {
+      title: 'Not Found',
+      description: 'The requested equipment could not be found'
+    };
   }
+  
+  return {
+    title: `${equipmentItem.name} | Your Site Name`,
+    description: equipmentItem.description,
+    openGraph: {
+      title: `${equipmentItem.name} | Your Site Name`,
+      description: equipmentItem.description,
+      images: [{ url: equipmentItem.image }]
+    },
+    metadataBase: new URL('https://your-website.com'), // Replace with your actual domain
+  };
+}
 
-  // Define the categories and their corresponding data keys
-  const categories = [
-    { title: "Specifications", key: "specifications" },
-    { title: "Capacity", key: "capacity" },
-    { title: "Performance", key: "performance" },
-    { title: "Applications", key: "applications" },
-    { title: "Safety Features", key: "safety" },
-    { title: "Features", key: "features" },
-  ];
-
-  return (
-    <div className="mx-auto p-4 pt-56">
-      {/* Hero Section */}
-      <div className="max-w-5xl mx-auto">
-      <div className="text-center pb-5">
-        <div className="p-2 inline-block">
-          <Image src={equipmentItem.image} alt={equipmentItem.name} width={800} height={400} />
-        </div>
-        <h2 className="text-2xl font-bold mt-4">{equipmentItem.name}</h2>
-        <p className="italic mt-2">{equipmentItem.description}</p>
-      </div>
-
-      {/* Specifications Section */}
-      <div className="border border-gray-200 rounded-xl">
-  {categories.map((category, index) => (
-    <div key={index}>
-      <h2>
-        <button
-          type="button"
-          className={`flex items-center justify-between w-full p-5 text-xl text-black college-block ${
-            index !== 0 ? "border-t border-gray-200" : ""
-          }`}
-          onClick={() => toggleAccordion(index)}
-        >
-          <span>{category.title}</span>
-          <svg
-            className={`w-3 h-3 transform ${openIndex === index ? "rotate-180" : ""}`}
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5 5 1 1 5"
-            />
-          </svg>
-        </button>
-      </h2>
-      <div
-        className={`overflow-hidden transition-all duration-300 ${
-          openIndex === index ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0"
-        }`}
-      >
-        <ul className="grid grid-cols-1 lg:grid-cols-2 mx-auto w-1/2">
-          {equipmentItem[category.key] ? (
-            Object.entries(equipmentItem[category.key]).map(([key, value]) => (
-              <li key={key} className="p-2">
-                <strong>{key}:</strong> {value}
-              </li>
-            ))
-          ) : (
-            <li>No data available.</li>
-          )}
-        </ul>
-      </div>
-    </div>
-  ))}
-</div>
-      </div>
-
-
-      {/* More Trucks */}
-     <MoreTrucks currentId={id} />
-</div>
-      
-  );
+export default async function EquipmentDetailPage({ params }) {
+  // Await params if needed
+  const resolvedParams = await params;
+  
+  if (!resolvedParams || !resolvedParams.id) {
+    return notFound();
+  }
+  
+  const id = resolvedParams.id;
+  const equipmentItem = equipment.find((item) => item.id.toString() === id);
+  
+  if (!equipmentItem) {
+    return notFound();
+  }
+  
+  return <EquipmentDetail equipmentItem={equipmentItem} />;
 }

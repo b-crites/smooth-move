@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 
@@ -15,9 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Smooth Move Concrete Pumping",
+  title: "Smooth Move | Best Concrete Pumping Services",
   description: "Get the best concrete pumping services with Smooth Move. Reliable, fast, and professional.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Smooth Move Concrete Pumping",
+    description: "Top-rated concrete pumping services for all projects.",
+    images: ["https://smoothmovecp.com/og-image.jpg"],
+    url: "https://yourwebsite.com/",
+  },
 };
+
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -35,37 +42,20 @@ const schemaData = {
   "telephone": "+1-555-555-5555"
 };
 
-
 export default function RootLayout({ children }) {
   return (
-    <>
-     
-    
-    <Head>
-        <title>Best Concrete Pumping Services | Smooth Move</title>
-        <meta name="description" content="Get the best concrete pumping services with Smooth Move. Reliable, fast, and professional." />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Smooth Move Concrete Pumping" />
-        <meta property="og:description" content="Top-rated concrete pumping services for all projects." />
-        <meta property="og:image" content="https://smoothmovecp.com/og-image.jpg" />
-        <meta property="og:url" content="https://yourwebsite.com/" />
-        <link rel="canonical" href="https://yourwebsite.com/" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schemaData).replace(/</g, "\\u003c"),
-          }}
-        />
-      </Head>
-      <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-         <Header />
-        {children}
-    <Footer />
-      </body>
+    <html>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Header />
+      {children}
+      <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData).replace(/</g, "\\u003c"),
+        }}
+      />
+    </body>
     </html>
-    </>
   );
 }

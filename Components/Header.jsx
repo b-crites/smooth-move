@@ -31,9 +31,11 @@ export default function Header() {
       <div className="college-block">
         {/* Top Blue Bar */}
         <div className="flex justify-between bg-[#003f71] p-2 items-center lg:pr-5">
+          <Link className="lg:pr-5 flex w-full" href="tel:555-555-5555">
           <button className="bg-white college-block hover:bg-[#EC3C33] hover:text-white border hover:border-white transition ease-in duration-150 text-xl rounded-xl mx-auto lg:mx-0 lg:ml-auto py-1 px-4 active:scale-95 text-black">
             CALL NOW
           </button>
+          </Link>
         </div>
 
         {/* Header Content */}

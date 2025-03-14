@@ -48,7 +48,7 @@ export default function Home() {
       <div className="flex justify-center pt-5">
         <h1 className="text-black text-2xl">{equipment.name}</h1>
       </div>
-        <p className="text-black text-sm justify-center align-middle flex text-center">{equipment.features.bestFor}</p>
+        <p className="text-black text-sm justify-center align-middle flex text-center">{Object.values(equipment.features)[0]}</p>
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex justify-center mt-5">
         <Link href={`/equipment/${equipment.id}`}>
         <Button  text="VIEW Truck" color="bg-black" textColor="text-white" borderColor="border-white" hoverColor="hover:bg-white" hoverTextColor="hover:text-black" hoverBorderColor="hover:border-black" />
@@ -137,7 +137,9 @@ export default function Home() {
           Let's get started talking about your project
         </p>
         <div className="mt-6">
+          <Link href="tel:541-868-7019">
         <Button text="CALL NOW" color="bg-white" textColor="text-black" borderColor="border-black" hoverColor="hover:bg-[#003f71]" hoverTextColor="hover:text-white" hoverBorderColor="hover:border-white" />
+          </Link>
         </div>
       </div>
     </div>
