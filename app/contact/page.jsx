@@ -33,7 +33,14 @@ export default function Contact() {
                         
                         
                         </ul>
+                        <p className=" text-3xl college-block">Email For Dispatch:</p>
+                    <ul className="flex flex-col space-x-4 text-2xl lg:text-3xl">
+                        <li className="font-roboto">Paul Barnes: <Link href='mailto:Paul@smoothmovecp.com'>Paul@smoothmovecp.com</Link></li>
+                        
+                        
+                        </ul>
                         <div className="w-full mx-auto lg:place-items-start place-items-center">
+                            <p className="text-2xl lg:text-3xl font-roboto mb-4" >Call Now: 541-345-2562</p>
                             <Link href="tel:541-868-7019">
                         <Button text="CALL NOW" />
                         </Link>

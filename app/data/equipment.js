@@ -2,7 +2,7 @@ export const equipment = [
   {
     id: "s-34-x",
     name: "S 34 X",
-    image: "/Img/s34x.jpg",
+    image: "/Img/34-Meter.jpeg",
     description: "The S 34 X is a compact and highly maneuverable concrete pump, perfect for tight job sites. Its 34-meter boom and 4-section Z-fold design make it ideal for residential and mid-size commercial projects.",
     specifications: {
       Output: "1",
@@ -38,7 +38,7 @@ export const equipment = [
   {
     id: "s-36-x",
     name: "S 36 X",
-    image: "/Img/s36x_2.png",
+    image: "/Img/36-Meter.png",
     description: "The S 36 X is a versatile and powerful concrete pump that can handle a variety of jobs. It is perfect for residential and commercial projects, and its compact size makes it easy to transport and set up. The S 36 X features a 36-meter boom and a 5-section Z-fold design, allowing it to reach even the most challenging locations. With a maximum output of 160 cubic yards per hour, the S 36 X is the perfect choice for projects of all sizes.",
     specifications: {
       'Output': "1",
@@ -74,7 +74,7 @@ export const equipment = [
   {
     id: "s-39-x",
     name: "S 39 X",
-    image: "/Img/s39x.jpg",
+    image: "/Img/39-Meter.png",
     description: "The S 39 X is built for high-volume concrete pumping, offering a 39-meter boom with excellent vertical and horizontal reach. Its efficient design ensures quick setup and operation.",
     specifications: {
       Output: "1.5",
@@ -110,7 +110,7 @@ export const equipment = [
   {
     id: "s-42-x",
     name: "S 42 X",
-    image: "/Img/s42x_2.jpg",
+    image: "/Img/42-Meter.png",
     description: "The S 42 X is a powerful concrete pump designed for larger projects. Its 42-meter boom and high pumping capacity make it ideal for commercial and industrial applications. This pump is perfect for high-rise structures and long-distance pumping, ensuring efficiency and precision on large job sites.",
     specifications: {
       Output: "2",
@@ -146,7 +146,7 @@ export const equipment = [
   {
     id: "line-pump",
     name: "Line Pump",
-    image: "/Img/line_pump.jpg",
+    image: "/Img/Line-Pump.png",
     description: "The Line Pump is a flexible and efficient solution for projects requiring long-distance pumping. It is ideal for residential projects, slab pours, and hard-to-reach locations.",
     specifications: {
       Output: "Varies",
