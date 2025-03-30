@@ -20,8 +20,8 @@ export const metadata = {
   openGraph: {
     title: "Smooth Move Concrete Pumping",
     description: "Top-rated concrete pumping services for all projects.",
-    images: ["https://smoothmovecp.com/og-image.jpg"],
-    url: "https://yourwebsite.com/",
+    images: ["https://smoothmovecp.com/Contact_BG.JPG"],
+    url: "https://smoothmovecp.com/",
   },
 };
 
@@ -29,8 +29,8 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Smooth Move Concrete Pumping",
-  "image": "https://yourwebsite.com/logo.png",
-  "url": "https://yourwebsite.com/",
+  "image": "https://smoothmovecp.com/Smooth_Move_Logo_White.png",
+  "url": "https://smoothmovecp.com/",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "525 S. Mill Street",
@@ -39,12 +39,16 @@ const schemaData = {
     "postalCode": "97426",
     "addressCountry": "US"
   },
-  "telephone": "+1-555-555-5555"
+  "telephone": "+1-541-345-2562"
 };
 
 export default function RootLayout({ children }) {
   return (
     <html>
+      <head>
+      <link rel='canonical' href="https://smoothmovecp.com/"/>
+      </head>
+      
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <Header />
       {children}

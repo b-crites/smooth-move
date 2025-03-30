@@ -33,6 +33,10 @@ export const equipment = [
       'Best For': "Residential pours, driveways, and tight job sites.",
       'Hose Reach': "N/A (Boom Pump)",
       'Why Choose It': "Compact size for easy maneuverability while still offering great reach.",
+    },
+    specsheet: {
+      'Download Sheet': "/files/34X-WorkingRange.pdf",
+      'Preview Sheet': "/files/34X-WorkingRange.pdf",
     }
   },
   {
@@ -69,11 +73,15 @@ export const equipment = [
       'Best For': "Mid-size commercial and residential projects with moderate reach needs.",
       'Hose Reach': "N/A (Boom Pump)",
       'Why Choose It': "Compact yet powerful, perfect for urban projects and tight job sites.",
+    },
+    specsheet: {
+      'Download Sheet': "/files/36xWorkingRange.pdf",
+      'Preview Sheet': "/files/36xWorkingRange.pdf",
     }
   },
   {
-    id: "s-39-x",
-    name: "S 39 X",
+    id: "kvm-39-x",
+    name: "KVM 39 X",
     image: "/Img/39-Meter.png",
     description: "The S 39 X is built for high-volume concrete pumping, offering a 39-meter boom with excellent vertical and horizontal reach. Its efficient design ensures quick setup and operation.",
     specifications: {
@@ -105,6 +113,10 @@ export const equipment = [
       'Best For': "Larger commercial pours and jobs requiring extra height.",
       'Hose Reach': "N/A (Boom Pump)",
       'Why Choose It': "Increased reach for multi-story construction projects.",
+    },
+    specsheet: {
+      'Download Sheet': "/files/39xWorkingRange.pdf",
+      'Preview Sheet': "/files/39xWorkingRange.pdf",
     }
   },
   {
@@ -141,6 +153,10 @@ export const equipment = [
       'Best For': "Large-scale commercial and industrial projects.",
       'Hose Reach': "N/A (Boom Pump)",
       'Why Choose It': "Maximum reach in the fleet, ideal for high-rise and large-area pours.",
+    },
+    specsheet: {
+      'Download Sheet': "/files/42SXWorkingRange.pdf",
+      'Preview Sheet': "/files/42SXWorkingRange.pdf",
     }
   },
   {

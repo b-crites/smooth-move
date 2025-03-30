@@ -19,6 +19,12 @@ export default function EquipmentDetail({ equipmentItem }) {
     { title: "Safety Features", key: "safety" },
     { title: "Features", key: "features" },
   ];
+  
+  // Conditionally add "Specs Sheet" only if it has valid data
+  if (equipmentItem.specsheet && Object.keys(equipmentItem.specsheet).length > 0) {
+    categories.push({ title: "Specs Sheet", key: "specsheet" });
+  }
+  
 
   return (
     <div className="mx-auto p-4 pt-56">
@@ -69,15 +75,29 @@ export default function EquipmentDetail({ equipmentItem }) {
                 }`}
               >
                 <ul className="grid grid-cols-1 lg:grid-cols-2 mx-auto w-1/2">
-                  {equipmentItem[category.key] ? (
-                    Object.entries(equipmentItem[category.key]).map(([key, value]) => (
-                      <li key={key} className="p-2">
-                        <strong>{key}:</strong> {value}
-                      </li>
-                    ))
-                  ) : (
-                    <li>No data available.</li>
-                  )}
+                {equipmentItem[category.key] ? (
+  Object.entries(equipmentItem[category.key]).map(([key, value]) => (
+    <li key={key} className="p-2">
+      <strong>{key}:</strong>{" "}
+      {key.includes("Sheet") && value !== "N/A (Boom Pump)" ? (
+        <a
+          href={value}
+          target={key === "Preview Sheet" ? "_blank" : "_self"}
+          download={key === "Download Sheet"}
+          rel="noopener noreferrer"
+          className="text-blue-500 underline"
+        >
+          {key === "Download Sheet" ? "Download" : "Preview"}
+        </a>
+      ) : (
+        value
+      )}
+    </li>
+  ))
+) : (
+  <li>No data available.</li>
+)}
+
                 </ul>
               </div>
             </div>

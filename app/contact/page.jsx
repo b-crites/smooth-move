@@ -40,9 +40,9 @@ export default function Contact() {
                         
                         </ul>
                         <div className="w-full mx-auto lg:place-items-start place-items-center">
-                            <p className="text-2xl lg:text-3xl font-roboto mb-4" >Call Now: 541-345-2562</p>
-                            <Link href="tel:541-868-7019">
-                        <Button text="CALL NOW" />
+                           
+                            <Link href="tel:541-345-2562">
+                        <Button text="541-345-2562" />
                         </Link>
                         </div>
                 </div>

@@ -21,14 +21,14 @@ export async function generateMetadata({ params }) {
   }
   
   return {
-    title: `${equipmentItem.name} | Your Site Name`,
+    title: `${equipmentItem.name} | Smooth Move Concrete Pumping`,
     description: equipmentItem.description,
     openGraph: {
-      title: `${equipmentItem.name} | Your Site Name`,
+      title: `${equipmentItem.name} | Smooth Move Concrete Pumping`,
       description: equipmentItem.description,
       images: [{ url: equipmentItem.image }]
     },
-    metadataBase: new URL('https://your-website.com'), // Replace with your actual domain
+    metadataBase: new URL('https://smoothmovecp.com'), // Replace with your actual domain
   };
 }
 

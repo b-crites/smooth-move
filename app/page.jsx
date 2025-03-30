@@ -137,9 +137,8 @@ export default function Home() {
           Let's get started talking about your project
         </p>
         <div className="mt-6">
-          <p className="text-white text-2xl lg:text-3xl mb-5">541-345-2562</p>
-          <Link href="tel:541-868-7019">
-        <Button text="CALL NOW" color="bg-white" textColor="text-black" borderColor="border-black" hoverColor="hover:bg-[#003f71]" hoverTextColor="hover:text-white" hoverBorderColor="hover:border-white" />
+          <Link href="tel:541-345-2562">
+        <Button text="541-345-2562" color="bg-white" textColor="text-black" borderColor="border-black" hoverColor="hover:bg-[#003f71]" hoverTextColor="hover:text-white" hoverBorderColor="hover:border-white" />
           </Link>
         </div>
       </div>
