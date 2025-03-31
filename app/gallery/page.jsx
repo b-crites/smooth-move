@@ -11,6 +11,20 @@ const Gallery = () => {
     "/Img/Truck_Working_Img.jpg",
     "/Img/Truck_Pump.JPG",
     "/Img/sunset.JPG",
+    "/Img/Gallery_5.png",
+    "/Img/Gallery_6.png",
+    "/Img/Gallery_7.png",
+    "/Img/Gallery_9.png",
+    "/Img/Gallery_10.png",
+    "/Img/Gallery_11.png",
+    "/Img/Gallery_12.png",
+    "/Img/Gallery_13.png",
+    "/Img/Gallery_14.png",
+    "/Img/Gallery_15.png",
+    "/Img/Gallery_16.png",
+    "/Img/House.png",
+
+
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
