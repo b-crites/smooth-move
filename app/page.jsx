@@ -20,8 +20,8 @@ export default function Home() {
         {/* Text centered in the middle */}
         <div className="flex justify-center items-center h-full">
           <motion.div initial={{y:20, opacity:0}} animate={{y:0, opacity:1}} transition={{ duration: 0.6 }} viewport={{ once: true }}  className="text-center space-y-8 lg:space-y-16 flex flex-col items-center">
-            <h1 className="text-6xl lg:text-8xl text-white">Poured to perfection</h1>
-            <h1 className="text-6xl  lg:text-8xl text-white">Built to last</h1>
+            <h1 className="text-4xl lg:text-8xl text-white">Poured to perfection</h1>
+            <h1 className="text-4xl lg:text-8xl text-white">Built to last</h1>
         </motion.div>
           </div>
         

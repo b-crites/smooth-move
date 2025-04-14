@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
       description: equipmentItem.description,
       images: [{ url: equipmentItem.image }]
     },
-    metadataBase: new URL('https://smoothmovecp.com'), // Replace with your actual domain
+    metadataBase: new URL('https://smoothmovecp.com'),
   };
 }
 
