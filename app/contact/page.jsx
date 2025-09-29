@@ -29,7 +29,7 @@ export default function Contact() {
                     
                         <p className=" text-3xl college-block">Location:</p>
                     <ul className="flex flex-col space-x-4 text-2xl lg:text-3xl">
-                        <li className="font- roboto">525 S. Mill Street, Creswell, OR 97426</li>
+                        <li className="font- roboto">P.O. Box 748</li>
                         
                         
                         </ul>
