@@ -87,35 +87,23 @@ export default function Home() {
   </div>
 
   {/* Grid Section */}
-  <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}}  className="relative z-20 lg:h-[500px] grid grid-cols-1 lg:grid-cols-2 mt-10 overflow-visible ">
-    <div className="grid space-y-2 lg:space-x-3 lg:mx-5 pb-5 mx-auto lg:ms-5 grid-cols-1 lg:grid-cols-2 col-span-1 lg:order-1 order-2">
-      <div className="col-span-1 relative z-30">
-        <Image 
-          src="/Img/Crew_Img_1.png" 
-          alt="Smooth Move Concrete Pumping" 
-          width={420} 
-          height={420} 
-          loading="lazy"
-          className="relative z-30 lg:translate-y-[-10%]"
-        />
-      </div>
-      <div className="hidden lg:block col-span-1 relative z-30 lg:min-h-[420px]">
-        <Image 
-          src="/Img/Crew_Img_2.png" 
-          alt="Smooth Move Concrete Pumping" 
-          width={420} 
-          height={420} 
-          loading="lazy"
-          className="relative z-30 lg:translate-y-[70%]"
-        />
-      </div>
+  <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} viewport={{once:true}} transition={{duration:0.8}}  className="relative z-20 grid grid-cols-1 lg:grid-cols-2 mt-10 overflow-visible ">
+    <div className="flex justify-center w-10/12 lg:w-full lg:mx-5 pb-5 mx-auto lg:ms-5 col-span-1 lg:order-1 order-2">
+      <Image
+        src="/Img/SM_Staff.jpg"
+        alt="Smooth Move Concrete Pumping Staff"
+        width={400}
+        height={200}
+        loading="lazy"
+        className="relative z-30"
+      />
     </div>
     <div className="col-span-1 flex flex-col justify-center order-1 lg:order-2 items-center pb-10">
       <div className="">
         <p className="text-white text-lg mt-2 mx-auto w-11/12 text-center lg:w-8/12">
-        Jacob, Erik, Michael, Steve, Paul, and Ryan (left to right) bring over 78 years of combined experience in concrete pumping and mechanics. They're more than just a team—they’re family and friends. Their bond makes the hard work easier, and we truly appreciate them. Having a team that feels like family makes all the difference.
+        Jacob, Michael, Steve, Paul, and Ryan (left to right) bring over 78 years of combined experience in concrete pumping and mechanics. They're more than just a team—they're family and friends. Their bond makes the hard work easier, and we truly appreciate them. Having a team that feels like family makes all the difference.
         </p>
-        
+
       </div>
       </div>
   </motion.div>
