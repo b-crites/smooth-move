@@ -91,38 +91,7 @@ export default function History() {
           />
         </div>
       </motion.div>
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="grid lg:grid-cols-2 grid-cols-1 pt-14 w-11/12 lg:w-10/12 pb-20 mx-auto"
-      >
-        <div className="col-span-1 order-2 lg:order-1 pt-5 lg:pt-0">
-          <Image
-            src="/Img/Brooke_and_Ryan.jpg"
-            width={500}
-            height={300}
-            loading="lazy"
-            alt="Good Vibes New Shop"
-            className="block mx-auto h-96 object-cover rounded-xl"
-          />
-        </div>
-        <div className="col-span-1 order-1 mx-5 my-auto">
-          <p className="lg:w-11/12 text-center mx-auto mt-4 text-lg">
-            Meanwhile, Brooke has stepped in to run the office, bringing a
-            wealth of experience, trust, and a deep sense of commitment to the
-            team. With her at the helm, the office has become a place where
-            efficiency and care go hand in hand. Brooke and Ryan have been
-            friends since grade school, which adds a layer of trust and
-            familiarity that’s hard to beat. This strong foundation reinforces
-            our belief in surrounding ourselves with people we trust, not just
-            professionally but personally as well. At Smooth Move Concrete
-            Pumping, family and integrity are at the core of everything we do,
-            and we are proud to have built a team that shares these values.
-          </p>
-        </div>
-      </motion.div>
+      
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
